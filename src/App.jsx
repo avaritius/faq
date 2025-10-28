@@ -5,10 +5,15 @@ function App() {
   const [tytul, setTytul] = useState('');
   const [rodzaj, setRodzaj] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ tytul, rodzaj });
+  };
+
   return (
     <div className="container mt-5">
       <h1>dodaj film</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="tytul" className="form-label">tytul filmu</label>
           <input
@@ -29,13 +34,15 @@ function App() {
             onChange={(e) => setRodzaj(e.target.value)}
             required
           >
-            <option value=""></option>
-            <option value="1">komedia</option>
-            <option value="2">obyczajowy</option>
-            <option value="3">sensacyjny</option>
-            <option value="4">horror</option>
+            <option value="">wybierz rodzaj</option>
+            <option value="Komedia">komedia</option>
+            <option value="Dramat">dramat</option>
+            <option value="Akcja">akcja</option>
+            <option value="Horror">horror</option>
+            <option value="Sci-Fi">sci-Fi</option>
           </select>
         </div>
+        <button type="submit" className="btn btn-primary">dodaj</button>
       </form>
     </div>
   );
