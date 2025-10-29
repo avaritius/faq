@@ -39,7 +39,6 @@ function App() {
             <option value="Dramat">dramat</option>
             <option value="Akcja">akcja</option>
             <option value="Horror">horror</option>
-            <option value="Sci-Fi">sci-Fi</option>
           </select>
         </div>
         <button type="submit" className="btn btn-primary">dodaj</button>
